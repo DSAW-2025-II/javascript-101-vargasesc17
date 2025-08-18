@@ -9,9 +9,5 @@ function sum(a, b) {
 }
 
 module.exports = {
-  sum,
-  factorial,
-  findLargest,
-  countVowels,
-  isPrime,
+  sum
 };
