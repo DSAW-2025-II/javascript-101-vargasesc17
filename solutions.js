@@ -26,13 +26,10 @@ function findLargest(arr) {
   // Add your code here
   if (!Array.isArray(arr)) {
     console.log("Los datos de entrada no son adecuados.");
-    return;
-  }
-
-  let newArr = arr.filter(number => typeof number == 'number' && !isNaN(number));
-  if (newArr.length === 0) {
+  } else {
+    let newArr = arr.filter(number => typeof number == 'number' && !isNaN(number));
+    if (newArr.length === 0) {
     console.log("Los datos de entrada no son adecuados.");
-    return;
   }
 
   let max = -Infinity;
@@ -44,40 +41,44 @@ function findLargest(arr) {
   return max;
 }
 
+  
+}
+
 // Count Vowels in a String
 function countVowels(str) {
   // Add your code here
   if (typeof str != "string") {
     console.log("Los datos de entrada no son adecuados.");
-    return;
-  }
+  } else {
+      const vowels = 'aeiouáéíóúüàâæçèêëîïôœùûÿäöãõAEIOUÁÉÍÓÚÜÀÂÆÇÈÊËÎÏÔŒÙÛŸÄÖÃÕ';
+      let count = 0;
 
-  const vowels = 'aeiouáéíóúüàâæçèêëîïôœùûÿäöãõAEIOUÁÉÍÓÚÜÀÂÆÇÈÊËÎÏÔŒÙÛŸÄÖÃÕ';
-  let count = 0;
+      for (let i = 0; i < str.length; i++) {
+        if (vowels.includes(str[i])) {
+          count++;
+        }
+      }
 
-  for (let i = 0; i < str.length; i++) {
-    if (vowels.includes(str[i])) {
-      count++;
+      return count;
     }
-  }
-
-  return count;
 }
 
 // Check if a Number is Prime
 function isPrime(n) {
   // Add your code here
-  if (!Number.isInteger(n) || n < 2) {
+  if (!Number.isInteger(n)) {
     console.log("Los datos de entrada no son adecuados.");
-    return;
-  }
+  } else if (n < 2) {
+    return false;
+  } else {
 
-  for (let i = 2; i <= Math.sqrt(n); i++) {
-    if (n % i === 0) {
-      return false;
+      for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i === 0) {
+          return false;
+        }
+      }
+      return true;
     }
-  }
-  return true;
 }
 
 module.exports = {
